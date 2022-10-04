@@ -92,6 +92,7 @@ public class Member {
         String username = scanner.nextLine();
         Socket socket = new Socket("localhost",1234);
         Member member = new Member(socket,username);
+        member.listeningForMessage();
         member.sendMessage();
 
 

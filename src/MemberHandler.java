@@ -38,7 +38,7 @@ public class MemberHandler implements Runnable {
 
             // add a username to the arraylist ( this represent a member handler obj)
             memberHandlers.add(this);
-            broadcastMessage("SERVER : " + username + " has enter the chat");
+            broadcastMessage("SERVER : " + username + " has entered the chat");
         }catch(IOException e){
             closeEverything(socket,bufferedReader,bufferedWriter);
         }
@@ -70,7 +70,7 @@ public class MemberHandler implements Runnable {
     public void broadcastMessage(String messageToSend){
 
          //loop through an arraylist and send a msg to each member connected
-        for (MemberHandler memberHandler:memberHandlers){
+        for (MemberHandler memberHandler : memberHandlers){
             try{
                 //if a current member handler in the arraylist doesn't equal a username
                 if(!memberHandler.username.equals((username))){
